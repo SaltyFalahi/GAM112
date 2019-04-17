@@ -5,10 +5,17 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float speed;
+    public float MaxSpeed = 10;
+    public float Acceleration = 35;
+    public float JumpSpeed = 8;
+    public float JumpDuration;
 
-    private Rigidbody2D rb2d;
+    Rigidbody2D rb2d;
 
+    float jmpDuration;
+
+    bool jumpKeyDown = false;
+    bool canJump = false;
 
 	// Use this for initialization
 	void Start ()
@@ -22,11 +29,50 @@ public class PlayerController : MonoBehaviour
 	void Update ()
     {
 
-        float Hor = Input.GetAxis("Horizontal");
+        float horizontal = Input.GetAxis("Horizontal");
 
-        Vector2 moveX = new Vector2(Hor * speed, 0);
+        if (horizontal < -0.1f)
+        {
 
-        rb2d.AddForce(moveX * Time.deltaTime, ForceMode2D.Impulse);
+            if (rb2d.velocity.x > -this.MaxSpeed)
+            {
+
+                rb2d.AddForce(new Vector2(-this.Acceleration, 0.0f));
+
+            }
+            else
+            {
+
+                rb2d.velocity = new Vector2(-this.MaxSpeed, rb2d.velocity.y);
+
+            }
+
+        }
+        else if (horizontal > 0.1f)
+        {
+
+            if (rb2d.velocity.x < this.MaxSpeed)
+            {
+
+                rb2d.AddForce(new Vector2(this.Acceleration, 0.0f));
+
+            }
+            else
+            {
+
+                rb2d.velocity = new Vector2(this.MaxSpeed, rb2d.velocity.y);
+
+            }
+
+        }
 
     }
+
+    /*private bool Grounded()
+    {
+
+
+
+    }*/
+
 }
