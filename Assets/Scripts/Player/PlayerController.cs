@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb2d;
 
+
 	// Use this for initialization
 	void Start ()
     {
