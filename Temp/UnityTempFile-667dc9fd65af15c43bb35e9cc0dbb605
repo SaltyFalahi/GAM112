@@ -2,7 +2,7 @@
 -target:library
 -nowarn:0169
 -langversion:4
--out:Temp/Unity.CollabProxy.Editor.dll
+-out:Temp/Assembly-CSharp.dll
 -nostdlib
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/UnityEngine/UnityEngine.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll"
@@ -64,26 +64,33 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/UnityEditor.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/Unity.Locator.dll"
+-r:Library/ScriptAssemblies/Unity.Timeline.Editor.dll
+-r:Library/ScriptAssemblies/Cinemachine.dll
+-r:Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll
+-r:Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
+-r:Library/ScriptAssemblies/Unity.Timeline.dll
+-r:Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
+-r:Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll
+-r:Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll
+-r:Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll
+-r:Library/ScriptAssemblies/com.unity.cinemachine.editor.dll
+-r:Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll
+-r:Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll
+-r:Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll
+-r:Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
--r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll"
--r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll"
--r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/UnityEditor.Graphs.dll"
--r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll"
--r:"C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll"
--r:I:/Unity/GAM112/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll
 -r:I:/Unity/GAM112/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll
 -r:I:/Unity/GAM112/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll
 -r:I:/Unity/GAM112/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll
--r:I:/Unity/GAM112/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll
--r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/mscorlib.dll"
--r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/System.dll"
--r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/System.Core.dll"
--r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/System.Runtime.Serialization.dll"
--r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/System.Xml.dll"
--r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/System.Xml.Linq.dll"
--r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/UnityScript.dll"
--r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/UnityScript.Lang.dll"
--r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/Boo.Lang.dll"
+-r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll"
+-r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.dll"
+-r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.Core.dll"
+-r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.Runtime.Serialization.dll"
+-r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.Xml.dll"
+-r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.Xml.Linq.dll"
+-r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/unity/UnityScript.dll"
+-r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/unity/UnityScript.Lang.dll"
+-r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll"
 -define:UNITY_2019_1_0
 -define:UNITY_2019_1
 -define:UNITY_2019
@@ -174,7 +181,7 @@
 -define:ENABLE_AR
 -define:ENABLE_WEBSOCKET_HOST
 -define:ENABLE_MONO
--define:NET_2_0
+-define:NET_2_0_SUBSET
 -define:NET_LEGACY
 -define:ENABLE_PROFILER
 -define:DEBUG
@@ -187,20 +194,4 @@
 -define:ENABLE_BURST_AOT
 -define:UNITY_TEAM_LICENSE
 -define:ENABLE_VSTU
-I:/Unity/GAM112/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/AssemblyInfo.cs
-I:/Unity/GAM112/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Bootstrap.cs
-I:/Unity/GAM112/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/CollabAnalytics.cs
-I:/Unity/GAM112/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/CollabHistoryWindow.cs
-I:/Unity/GAM112/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/CollabToolbarButton.cs
-I:/Unity/GAM112/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/CollabToolbarWindow.cs
-I:/Unity/GAM112/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Presenters/CollabHistoryPresenter.cs
-I:/Unity/GAM112/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/BuildStatusButton.cs
-I:/Unity/GAM112/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/CollabHistoryDropDown.cs
-I:/Unity/GAM112/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/CollabHistoryDropDownItem.cs
-I:/Unity/GAM112/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/CollabHistoryItem.cs
-I:/Unity/GAM112/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/CollabHistoryItemFactory.cs
-I:/Unity/GAM112/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/CollabHistoryRevisionLine.cs
-I:/Unity/GAM112/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/HistoryProgressSpinner.cs
-I:/Unity/GAM112/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/ICollabHistoryItemFactory.cs
-I:/Unity/GAM112/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/PagedListView.cs
-I:/Unity/GAM112/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/StatusView.cs
+Assets/Scripts/Player/PlayerController.cs

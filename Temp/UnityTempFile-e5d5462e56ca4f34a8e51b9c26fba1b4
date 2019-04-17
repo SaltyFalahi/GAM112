@@ -2,7 +2,7 @@
 -target:library
 -nowarn:0169
 -langversion:4
--out:Temp/UnityEngine.SpatialTracking.dll
+-out:Temp/Assembly-CSharp.dll
 -nostdlib
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/UnityEngine/UnityEngine.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll"
@@ -64,20 +64,24 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/UnityEditor.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/Unity.Locator.dll"
+-r:Library/ScriptAssemblies/Unity.Timeline.Editor.dll
+-r:Library/ScriptAssemblies/Cinemachine.dll
+-r:Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll
+-r:Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
+-r:Library/ScriptAssemblies/Unity.Timeline.dll
+-r:Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
+-r:Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll
+-r:Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll
+-r:Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll
+-r:Library/ScriptAssemblies/com.unity.cinemachine.editor.dll
+-r:Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll
+-r:Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll
+-r:Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll
+-r:Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
--r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll"
--r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll"
--r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll"
--r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll"
--r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll"
--r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/UnityEditor.Graphs.dll"
--r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll"
--r:"C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll"
--r:I:/Unity/GAM112/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll
 -r:I:/Unity/GAM112/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll
 -r:I:/Unity/GAM112/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll
 -r:I:/Unity/GAM112/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll
--r:I:/Unity/GAM112/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.Core.dll"
@@ -190,6 +194,4 @@
 -define:ENABLE_BURST_AOT
 -define:UNITY_TEAM_LICENSE
 -define:ENABLE_VSTU
-I:/Unity/GAM112/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/Runtime/TrackedPoseDriver/AssemblyInfo.cs
-I:/Unity/GAM112/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/Runtime/TrackedPoseDriver/BasePoseProvider.cs
-I:/Unity/GAM112/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/Runtime/TrackedPoseDriver/TrackedPoseDriver.cs
+Assets/Scripts/Player/PlayerController.cs

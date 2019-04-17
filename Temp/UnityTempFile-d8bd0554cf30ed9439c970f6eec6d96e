@@ -4,20 +4,6 @@
 -langversion:4
 -out:Temp/Assembly-CSharp.dll
 -nostdlib
--r:Library/ScriptAssemblies/Unity.Timeline.Editor.dll
--r:Library/ScriptAssemblies/Cinemachine.dll
--r:Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll
--r:Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
--r:Library/ScriptAssemblies/Unity.Timeline.dll
--r:Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
--r:Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll
--r:Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll
--r:Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll
--r:Library/ScriptAssemblies/com.unity.cinemachine.editor.dll
--r:Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll
--r:Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll
--r:Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll
--r:Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/UnityEngine/UnityEngine.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll"
@@ -78,6 +64,20 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/UnityEditor.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/Unity.Locator.dll"
+-r:Library/ScriptAssemblies/Unity.Timeline.Editor.dll
+-r:Library/ScriptAssemblies/Cinemachine.dll
+-r:Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll
+-r:Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
+-r:Library/ScriptAssemblies/Unity.Timeline.dll
+-r:Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
+-r:Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll
+-r:Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll
+-r:Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll
+-r:Library/ScriptAssemblies/com.unity.cinemachine.editor.dll
+-r:Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll
+-r:Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll
+-r:Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll
+-r:Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll
 -r:"C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
 -r:I:/Unity/GAM112/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll
 -r:I:/Unity/GAM112/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll
@@ -194,5 +194,4 @@
 -define:ENABLE_BURST_AOT
 -define:UNITY_TEAM_LICENSE
 -define:ENABLE_VSTU
-Assets/Scripts/Player/Jump.cs
 Assets/Scripts/Player/PlayerController.cs

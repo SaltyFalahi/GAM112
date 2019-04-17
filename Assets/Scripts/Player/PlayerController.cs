@@ -7,15 +7,18 @@ public class PlayerController : MonoBehaviour
 
     public float MaxSpeed = 10;
     public float Acceleration = 35;
-    public float JumpSpeed = 8;
-    public float JumpDuration;
+    public float JumpSpeed = 5;
+    public float JumpTime;
+
+    public bool isGrounded;
+
+    public LayerMask groundLayers;
 
     Rigidbody2D rb2d;
 
-    float jmpDuration;
+    float jumpTimeCounter;
 
-    bool jumpKeyDown = false;
-    bool canJump = false;
+    bool isJumping = false;
 
 	// Use this for initialization
 	void Start ()
@@ -29,7 +32,23 @@ public class PlayerController : MonoBehaviour
 	void Update ()
     {
 
+        isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 0.5f),
+            new Vector2(transform.position.x + 0.5f, transform.position.y + 0.5f), groundLayers);
+
         float horizontal = Input.GetAxis("Horizontal");
+
+        if (horizontal > 0)
+        {
+
+            transform.eulerAngles = new Vector3(0, 180, 0);
+
+        }
+        else if(horizontal < 0)
+        {
+
+            transform.eulerAngles = new Vector3(0, 0, 0);
+
+        }
 
         if (horizontal < -0.1f)
         {
@@ -66,13 +85,41 @@ public class PlayerController : MonoBehaviour
 
         }
 
+        if(isGrounded && Input.GetKeyDown(KeyCode.Space))
+        {
+
+            isJumping = true;
+            jumpTimeCounter = JumpTime;
+            rb2d.velocity = Vector2.up * JumpSpeed;
+
+        }
+        
+        if(Input.GetKey(KeyCode.Space) && isJumping)
+        {
+
+            if(jumpTimeCounter > 0)
+            {
+
+                rb2d.velocity = Vector2.up * JumpSpeed;
+                jumpTimeCounter -= Time.deltaTime;
+
+            }
+            else
+            {
+
+                isJumping = false;
+
+            }
+
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+
+            isJumping = false;
+
+        }
+
     }
-
-    /*private bool Grounded()
-    {
-
-
-
-    }*/
 
 }
