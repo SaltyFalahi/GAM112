@@ -4,27 +4,22 @@ using UnityEngine;
 
 public class BulletDestroy : MonoBehaviour
 {
-
+    public float offset = 10;
+    public GameObject player;
 
     void Start()
     {
-
     }
 
 
     void Update()
     {
-        
-    }
-
-    /*public void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Enemy")
+        if (Vector3.Distance(transform.position, player.transform.position) >= offset)
         {
             Destroy(gameObject);
         }
-    }*/
-
+    }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (gameObject.tag == "Enemy")

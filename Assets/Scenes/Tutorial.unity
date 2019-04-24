@@ -485,12 +485,12 @@ MonoBehaviour:
   m_ScreenX: 0.5
   m_ScreenY: 0.85
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0.054
-  m_DeadZoneHeight: 0.1
+  m_DeadZoneWidth: 0.058
+  m_DeadZoneHeight: 0.106
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 0.2
-  m_SoftZoneHeight: 0.4
+  m_SoftZoneWidth: 0.8
+  m_SoftZoneHeight: 0.8
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
@@ -584,16 +584,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9072845579891768549, guid: c86f8f1a3d82e9247a7b1c9b06edcb3c,
-        type: 3}
-      propertyPath: MaxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9072845579891768549, guid: c86f8f1a3d82e9247a7b1c9b06edcb3c,
-        type: 3}
-      propertyPath: Acceleration
-      value: 35
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c86f8f1a3d82e9247a7b1c9b06edcb3c, type: 3}
 --- !u!4 &1077905332 stripped
@@ -680,7 +670,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090485718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: 0.00000023841858, z: -10}
+  m_LocalPosition: {x: 8.999999, y: 0.00000047683716, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -980,7 +970,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985223102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: 0.00000023841858, z: -10}
+  m_LocalPosition: {x: 8.999999, y: 0.00000047683716, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 440399267}
