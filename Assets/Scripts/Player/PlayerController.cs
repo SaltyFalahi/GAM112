@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
             if (rb2d.velocity.x > -this.MaxSpeed)
             {
 
-                rb2d.AddForce(new Vector2(-this.Acceleration, 0.0f));
+                rb2d.AddForce(new Vector2(-this.Acceleration, rb2d.velocity.y));
 
             }
             else
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
             if (rb2d.velocity.x < this.MaxSpeed)
             {
 
-                rb2d.AddForce(new Vector2(this.Acceleration, 0.0f));
+                rb2d.AddForce(new Vector2(this.Acceleration, rb2d.velocity.y));
 
             }
             else
@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
 
             isJumping = true;
             jumpTimeCounter = JumpTime;
-            rb2d.velocity = Vector2.up * JumpSpeed;
+            rb2d.velocity = new Vector2(rb2d.velocity.x, JumpSpeed);
 
         }
         
@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
             if(jumpTimeCounter > 0)
             {
 
-                rb2d.velocity = Vector2.up * JumpSpeed;
+                rb2d.velocity = new Vector2(rb2d.velocity.x, JumpSpeed);
                 jumpTimeCounter -= Time.deltaTime;
 
             }
