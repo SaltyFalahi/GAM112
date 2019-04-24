@@ -12,15 +12,13 @@ public class PlayerShooting : MonoBehaviour
     public float pistolSpeed;
     public float machineGunSpeed;
     public float shotgunSpeed;
-    public float spreadAngle;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        pistolSpeed = 5;
+        pistolSpeed = 8;
         machineGunSpeed = 10;
-        shotgunSpeed = 5;
-        spreadAngle = 2;
+        shotgunSpeed = 6;
     }
     
 
