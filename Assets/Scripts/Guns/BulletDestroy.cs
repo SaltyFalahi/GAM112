@@ -19,13 +19,15 @@ public class BulletDestroy : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (gameObject.tag == "Enemy")
+        Debug.Log("boo");   
+        if (collision.gameObject.tag == "Enemy")
         {
-            Destroy(gameObject);
+            Debug.Log("poopw");
+            Destroy(collision.gameObject);
+            Destroy(gameObject); 
         }
     }
-
 }

@@ -72,7 +72,6 @@ public class PlayerShooting : MonoBehaviour
             pistol.SetActive(true);
             if (pistol.activeSelf == true)
             {
-                Debug.Log("first");
                 machineGun.SetActive(false);
                 shotgun.SetActive(false);
             }
