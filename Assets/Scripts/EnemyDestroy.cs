@@ -16,7 +16,7 @@ public class EnemyDestroy : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("shit");
+        
         if (collision.gameObject.tag.Equals ("Bullet"))
         {
             Debug.Log("poop");

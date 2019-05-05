@@ -5,10 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float MaxSpeed = 10;
+    public float MaxSpeed = 5;
     public float Acceleration = 35;
-    public float JumpSpeed = 5;
+    public float JumpSpeed = 3;
     public float JumpTime;
+    public float Health = 1;
 
     public bool isGrounded;
 

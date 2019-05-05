@@ -22,10 +22,10 @@ public class BulletDestroy : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("boo");   
+         
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("poopw");
+            
             Destroy(collision.gameObject);
             Destroy(gameObject); 
         }
