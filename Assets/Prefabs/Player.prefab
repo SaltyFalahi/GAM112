@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 8439534059074421819}
   - component: {fileID: 8439534059074421818}
   - component: {fileID: 8439534059074421821}
-  - component: {fileID: 8439534059074421817}
-  - component: {fileID: 8439534059074421814}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -130,31 +128,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10, y: 10}
   m_EdgeRadius: 0
---- !u!114 &8439534059074421817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8439534059074421820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8e52090bc01f6941a5bfc2a556e78b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
---- !u!114 &8439534059074421814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8439534059074421820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bee12e3c0d2e224468751624eeb97057, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallMultiplier: 2.5
-  lowJumpMultiplier: 2
-  jumpVelocity: 5

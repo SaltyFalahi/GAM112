@@ -5,9 +5,22 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float speed;
+    public float MaxSpeed = 10;
+    public float Acceleration = 35;
+    public float JumpSpeed = 5;
+    public float JumpTime;
 
-    private Rigidbody2D rb2d;
+    public bool isGrounded;
+
+    public GameObject ground;
+
+    public LayerMask groundLayers;
+
+    Rigidbody2D rb2d;
+
+    float jumpTimeCounter;
+
+    bool isJumping = false;
 
 	// Use this for initialization
 	void Start ()
@@ -20,10 +33,96 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        float Hor = Input.GetAxis("Horizontal");
 
-        Vector2 moveX = new Vector2(Hor * speed, 0);
+        isGrounded = Physics2D.OverlapArea(new Vector2(ground.transform.position.x, ground.transform.position.y),
+            new Vector2(transform.position.x + 0.5f, transform.position.y + 0.5f), groundLayers);
+        
 
-        rb2d.AddForce(moveX * Time.deltaTime, ForceMode2D.Impulse);
+        float horizontal = Input.GetAxis("Horizontal");
+
+        if (horizontal > 0)
+        {
+
+            transform.eulerAngles = new Vector3(0, 180, 0);
+
+        }
+        else if(horizontal < 0)
+        {
+
+            transform.eulerAngles = new Vector3(0, 0, 0);
+
+        }
+
+        if (horizontal < -0.1f)
+        {
+
+            if (rb2d.velocity.x > -this.MaxSpeed)
+            {
+
+                rb2d.AddForce(new Vector2(-this.Acceleration, rb2d.velocity.y));
+
+            }
+            else
+            {
+
+                rb2d.velocity = new Vector2(-this.MaxSpeed, rb2d.velocity.y);
+
+            }
+
+        }
+        else if (horizontal > 0.1f)
+        {
+
+            if (rb2d.velocity.x < this.MaxSpeed)
+            {
+
+                rb2d.AddForce(new Vector2(this.Acceleration, rb2d.velocity.y));
+
+            }
+            else
+            {
+
+                rb2d.velocity = new Vector2(this.MaxSpeed, rb2d.velocity.y);
+
+            }
+
+        }
+
+        if(isGrounded && Input.GetKeyDown(KeyCode.Space))
+        {
+
+            isJumping = true;
+            jumpTimeCounter = JumpTime;
+            rb2d.velocity = new Vector2(rb2d.velocity.x, JumpSpeed);
+
+        }
+        
+        if(Input.GetKey(KeyCode.Space) && isJumping)
+        {
+
+            if(jumpTimeCounter > 0)
+            {
+
+                rb2d.velocity = new Vector2(rb2d.velocity.x, JumpSpeed);
+                jumpTimeCounter -= Time.deltaTime;
+
+            }
+            else
+            {
+
+                isJumping = false;
+
+            }
+
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+
+            isJumping = false;
+
+        }
+
     }
+    
 }

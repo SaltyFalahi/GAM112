@@ -17,7 +17,9 @@ public class AIBasic : MonoBehaviour
     public float desireDistance;
     public float escapeDistance;
     public float moveForce;
+    public float speed;
     public GameObject player;
+    public GameObject bullet;
     public Transform[] patrolPoints;
     private Rigidbody2D enemyRigidB;
     private DistanceChecker distanceCheck;
@@ -69,6 +71,15 @@ public class AIBasic : MonoBehaviour
                 {
                     // Shoot stuff
                     Debug.Log("Attacked");
+
+                    Vector2 point = player.transform.position;
+                    Vector2 position = new Vector2(transform.position.x, transform.position.y);
+                    Vector2 direction = point - position;
+                    direction.Normalize();
+                    GameObject projectile = (GameObject)Instantiate(bullet, position, Quaternion.identity);
+                    projectile.GetComponent<Rigidbody2D>().velocity = direction * speed;
+                    projectile.transform.up = direction;
+
                 }
                 break;
             default:
@@ -87,7 +98,7 @@ public class AIBasic : MonoBehaviour
 
     void EnemyPatrol()
     {
-        if (distanceCheck.Distance(gameObject.transform, currentTarget) <= desireDistance)
+        if (distanceCheck.Distance(transform, currentTarget) <= desireDistance)
         {
             if (currentTarget == patrolPoints[0])
             {
@@ -110,8 +121,9 @@ public class AIBasic : MonoBehaviour
         if (currentTarget != null)
         {
             Vector2 dir = currentTarget.position - transform.position;
-            enemyRigidB.AddForce(dir.normalized * moveForce, ForceMode2D.Impulse);
+            enemyRigidB.AddForce(dir.normalized * moveForce, ForceMode2D.Force);
         }
 
     }
+
 }

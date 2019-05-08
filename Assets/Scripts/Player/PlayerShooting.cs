@@ -28,6 +28,8 @@ public class PlayerShooting : MonoBehaviour
         ChangeWeapons();
 
         
+        // Make these into function() vvvv
+
         if (Input.GetMouseButtonDown(0) && pistol.activeSelf == true)
         {
             Vector2 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
