@@ -46,7 +46,7 @@ public class Drugs : MonoBehaviour
                     drugged = true;
                     drug = 2;
                     targetTime = 10.0f;
-                    Debug.Log("1");
+                    
                     break;
 
                 case 2:
@@ -58,7 +58,7 @@ public class Drugs : MonoBehaviour
                     drugged = true;
                     drug = 3;
                     targetTime = 10.0f;
-                    Debug.Log("2");
+                    
                     break;
 
                 case 3:
@@ -70,7 +70,7 @@ public class Drugs : MonoBehaviour
                     drugged = true;
                     drug = 0;
                     targetTime = 15.0f;
-                    Debug.Log("3");
+
                     break;
             }
 
@@ -105,7 +105,7 @@ public class Drugs : MonoBehaviour
         {
 
             gameObject.GetComponent<PlayerController>().Health = 0;
-            Debug.Log("4");
+
         }
 
     }
