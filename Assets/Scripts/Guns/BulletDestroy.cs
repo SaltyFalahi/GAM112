@@ -22,7 +22,11 @@ public class BulletDestroy : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
+<<<<<<< HEAD
           
+=======
+         
+>>>>>>> Drugs
         if (collision.gameObject.tag == "Enemy")
         {
             

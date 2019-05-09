@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 1
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -96,7 +96,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 0680e72866255a34fb03882dc0853cbe,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -432,6 +433,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &429503923 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9072845579891768544, guid: c86f8f1a3d82e9247a7b1c9b06edcb3c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1027915423}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &429503929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429503923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b9800b66956024a9d8a190dff45d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drug: 0
+  withdrawl: 0
+  special: 0
+  drugged: 0
+  hit: 0
 --- !u!1 &440399266
 GameObject:
   m_ObjectHideFlags: 3
@@ -483,10 +507,10 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_ScreenX: 0.5
-  m_ScreenY: 0.85
+  m_ScreenY: 0.8
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0.058
-  m_DeadZoneHeight: 0.106
+  m_DeadZoneWidth: 0.059
+  m_DeadZoneHeight: 0.113
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.8
@@ -709,6 +733,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1490871258, guid: c86f8f1a3d82e9247a7b1c9b06edcb3c, type: 3}
+      propertyPath: pistolSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490871258, guid: c86f8f1a3d82e9247a7b1c9b06edcb3c, type: 3}
+      propertyPath: machineGunSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490871258, guid: c86f8f1a3d82e9247a7b1c9b06edcb3c, type: 3}
+      propertyPath: shotgunSpeed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c86f8f1a3d82e9247a7b1c9b06edcb3c, type: 3}
 --- !u!4 &1077905332 stripped
@@ -795,7 +831,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090485718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.999999, y: 0.00000047683716, z: -10}
+  m_LocalPosition: {x: 9, y: -0.50000024, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1236,7 +1272,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985223102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.999999, y: 0.00000047683716, z: -10}
+  m_LocalPosition: {x: 9, y: -0.50000024, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 440399267}
