@@ -13,10 +13,6 @@ public class PlayerController : MonoBehaviour
 
     public bool isGrounded;
 
-    public GameObject ground;
-
-    public LayerMask groundLayers;
-
     Rigidbody2D rb2d;
 
     float jumpTimeCounter;
@@ -34,10 +30,6 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-
-        isGrounded = Physics2D.OverlapArea(new Vector2(ground.transform.position.x, ground.transform.position.y),
-            new Vector2(transform.position.x + 0.5f, transform.position.y + 0.5f), groundLayers);
-        
 
         float horizontal = Input.GetAxis("Horizontal");
 
@@ -124,4 +116,6 @@ public class PlayerController : MonoBehaviour
 
         }   
     }
+
+
 }

@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 8439534059074421819}
   - component: {fileID: 8439534059074421818}
   - component: {fileID: 8439534059074421821}
+  - component: {fileID: 3529787234836316752}
+  - component: {fileID: 8188135800885295051}
+  - component: {fileID: -4539504856093965126}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -128,3 +131,58 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10, y: 10}
   m_EdgeRadius: 0
+--- !u!114 &3529787234836316752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8439534059074421820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e52090bc01f6941a5bfc2a556e78b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxSpeed: 5
+  Acceleration: 35
+  JumpSpeed: 3
+  JumpTime: 0
+  Health: 1
+  isGrounded: 0
+--- !u!114 &8188135800885295051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8439534059074421820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0b3c91783cc6145b536cd904f9f7f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 1010866190977338684, guid: 02bc4a069ee1e5a4896bab3c4acf9cca, type: 3}
+  pistol: {fileID: 4834104002476223741, guid: 9fc7db24a7bdff04f840ec71337e6944, type: 3}
+  machineGun: {fileID: 5731349759002263626, guid: 7330cf4f4e2fdbe499a5fa926d3843cd,
+    type: 3}
+  shotgun: {fileID: 4261733791576592735, guid: 5ddd32729d04e464c85513383f41fdcb, type: 3}
+  pistolSpeed: 5
+  machineGunSpeed: 5
+  shotgunSpeed: 5
+--- !u!114 &-4539504856093965126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8439534059074421820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b9800b66956024a9d8a190dff45d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drug: 0
+  withdrawl: 0
+  special: 0
+  drugged: 0
+  hit: 0

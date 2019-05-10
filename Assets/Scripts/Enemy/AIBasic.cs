@@ -22,15 +22,9 @@ public class AIBasic : MonoBehaviour
     public float desireDistance;
     public float escapeDistance;
     public float moveForce;
-<<<<<<< HEAD:Assets/ScriptsKL/AIBasic.cs
-    public float speed;
-    public GameObject player;
-    public GameObject bullet;
-=======
 
     public GameObject player;
 
->>>>>>> Drugs:Assets/Scripts/Enemy/AIBasic.cs
     public Transform[] patrolPoints;
 
     private Rigidbody2D enemyRigidB;
@@ -111,21 +105,8 @@ public class AIBasic : MonoBehaviour
 
             case enemyStates.Attack:
                 {
-<<<<<<< HEAD:Assets/ScriptsKL/AIBasic.cs
-                    // Shoot stuff
-                    Debug.Log("Attacked");
-
-                    Vector2 point = player.transform.position;
-                    Vector2 position = new Vector2(transform.position.x, transform.position.y);
-                    Vector2 direction = point - position;
-                    direction.Normalize();
-                    GameObject projectile = (GameObject)Instantiate(bullet, position, Quaternion.identity);
-                    projectile.GetComponent<Rigidbody2D>().velocity = direction * speed;
-                    projectile.transform.up = direction;
-=======
 
                     
->>>>>>> Drugs:Assets/Scripts/Enemy/AIBasic.cs
 
                 }
 
@@ -153,12 +134,8 @@ public class AIBasic : MonoBehaviour
 
     void EnemyPatrol()
     {
-<<<<<<< HEAD:Assets/ScriptsKL/AIBasic.cs
-        if (distanceCheck.Distance(transform, currentTarget) <= desireDistance)
-=======
 
         if (distanceCheck.Distance(gameObject.transform, currentTarget) <= desireDistance)
->>>>>>> Drugs:Assets/Scripts/Enemy/AIBasic.cs
         {
 
             if (currentTarget == patrolPoints[0])
@@ -192,12 +169,8 @@ public class AIBasic : MonoBehaviour
         {
 
             Vector2 dir = currentTarget.position - transform.position;
-<<<<<<< HEAD:Assets/ScriptsKL/AIBasic.cs
-            enemyRigidB.AddForce(dir.normalized * moveForce, ForceMode2D.Force);
-=======
             enemyRigidB.AddForce(dir.normalized * moveForce, ForceMode2D.Impulse);
 
->>>>>>> Drugs:Assets/Scripts/Enemy/AIBasic.cs
         }
 
     }
