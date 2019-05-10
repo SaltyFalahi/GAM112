@@ -5,14 +5,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float MaxSpeed = 10;
+    public float MaxSpeed = 5;
     public float Acceleration = 35;
-    public float JumpSpeed = 5;
+    public float JumpSpeed = 3;
     public float JumpTime;
+    public float Health = 1;
+    private Vector3 rollDirection;
+    private Vector2 mousePos;   
 
     public bool isGrounded;
-
-    public LayerMask groundLayers;
 
     Rigidbody2D rb2d;
 
@@ -25,15 +26,11 @@ public class PlayerController : MonoBehaviour
     {
 
         rb2d = GetComponent<Rigidbody2D>();
-
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-
-        isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 0.5f),
-            new Vector2(transform.position.x + 0.5f, transform.position.y + 0.5f), groundLayers);
 
         float horizontal = Input.GetAxis("Horizontal");
 
@@ -84,7 +81,7 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-
+        
         if(isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
 
@@ -112,14 +109,35 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+        DodgeRoll();
+        Slide();
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
 
             isJumping = false;
 
-        }
+        }   
+    }
 
+    private void DodgeRoll()
+    {
+        rollDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            MaxSpeed = 50f;
+            transform.position += rollDirection * MaxSpeed * Time.deltaTime;
+        }
+    }
+
+    private void Slide()
+    {
+        rollDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            MaxSpeed = 50f;
+            transform.position += rollDirection * MaxSpeed * Time.deltaTime;
+        }
     }
 
 }
