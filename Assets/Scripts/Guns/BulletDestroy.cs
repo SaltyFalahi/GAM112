@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletDestroy : MonoBehaviour
 {
     public float offset = 10;
-    public GameObject player;
+    public GameObject shooter;
 
     void Start()
     {
@@ -14,7 +14,7 @@ public class BulletDestroy : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) >= offset)
+        if (Vector3.Distance(transform.position, shooter.transform.position) >= offset)
         {
             Destroy(gameObject);
         }
@@ -23,6 +23,7 @@ public class BulletDestroy : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
           
+         
         if (collision.gameObject.tag == "Enemy")
         {
             

@@ -5,16 +5,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float MaxSpeed = 10;
+    public float MaxSpeed = 5;
     public float Acceleration = 35;
-    public float JumpSpeed = 5;
+    public float JumpSpeed = 3;
     public float JumpTime;
+    public float Health = 1;
 
     public bool isGrounded;
-
-    public GameObject ground;
-
-    public LayerMask groundLayers;
 
     Rigidbody2D rb2d;
 
@@ -33,10 +30,6 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-
-        isGrounded = Physics2D.OverlapArea(new Vector2(ground.transform.position.x, ground.transform.position.y),
-            new Vector2(transform.position.x + 0.5f, transform.position.y + 0.5f), groundLayers);
-        
 
         float horizontal = Input.GetAxis("Horizontal");
 
@@ -123,4 +116,6 @@ public class PlayerController : MonoBehaviour
 
         }   
     }
+
+
 }
