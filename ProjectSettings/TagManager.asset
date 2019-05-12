@@ -7,8 +7,11 @@ TagManager:
   - Background
   - Interiors
   - Wall
-  - Bullet
   - Ground
+  - Enemy
+  - BulletP
+  - BulletE
+  - Bullet
   layers:
   - Default
   - TransparentFX

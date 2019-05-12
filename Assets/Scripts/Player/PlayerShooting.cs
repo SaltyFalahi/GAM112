@@ -31,8 +31,8 @@ public class PlayerShooting : MonoBehaviour
         ChangeWeapons();
 
         cooldown -= Time.deltaTime;
-        Debug.Log(cooldown);
-        if(cooldown <= 0)
+
+        if (cooldown <= 0)
         {
 
             if (Input.GetMouseButtonDown(0) && pistol.activeSelf == true)
@@ -117,4 +117,5 @@ public class PlayerShooting : MonoBehaviour
         projectile.transform.up = direction;
 
     }
+
 }

@@ -13,11 +13,11 @@ public class PlayerController : MonoBehaviour
 
     public bool isGrounded;
 
-    Rigidbody2D rb2d;
+    private Rigidbody2D rb2d;
 
-    float jumpTimeCounter;
+    private float jumpTimeCounter;
 
-    bool isJumping = false;
+    private bool isJumping = false;
 
 	void Start ()
     {
@@ -112,10 +112,18 @@ public class PlayerController : MonoBehaviour
 
             isJumping = false;
 
-        }   
+        }
+
+        if (Health == 0)
+        {
+
+            //Gameover screen
+
+        }
+
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
 
         if (collision.gameObject.tag == "Ground")
@@ -127,13 +135,25 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    void OnCollisionExit2D(Collision2D collision)
     {
 
         if (collision.gameObject.tag == "Ground")
         {
 
             isGrounded = false;
+
+        }
+
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.tag.Equals("BulletE"))
+        {
+
+            Health -= 1;
 
         }
 

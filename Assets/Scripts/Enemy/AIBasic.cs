@@ -11,9 +11,19 @@ public enum enemyStates
 
 }
 
+public enum enemyType
+{
+
+    Thug,
+    Riot,
+    Juggernaut,
+
+}
+
 public class AIBasic : MonoBehaviour
 {
     public enemyStates currState;
+    public enemyType currType;
 
     public int health;
 
@@ -38,10 +48,13 @@ public class AIBasic : MonoBehaviour
 
     private Transform currentTarget;
 
+    private JuggernautDamage script;
+
     void Start()
     {
 
         enemyRigidB = GetComponent<Rigidbody2D>();
+        script = GetComponent<JuggernautDamage>();
         distanceCheck = GameObject.FindObjectOfType<DistanceChecker>();
         cooldown = 5f;
         currentTarget = patrolPoints[0];
@@ -112,19 +125,53 @@ public class AIBasic : MonoBehaviour
             case enemyStates.Attack:
                 {
 
-                    cooldown -= Time.deltaTime;
-
-                    if (cooldown <= 0)
+                    switch (currType)
                     {
+                        case enemyType.Thug:
 
-                        Vector2 point = Camera.main.ScreenToWorldPoint(player.transform.position);
-                        Vector2 position = new Vector2(transform.position.x, transform.position.y);
-                        Vector2 direction = point - position;
-                        direction.Normalize();
-                        GameObject projectile = (GameObject)Instantiate(bullet, position, Quaternion.identity);
-                        projectile.GetComponent<Rigidbody2D>().velocity = direction * speed;
-                        projectile.transform.up = direction;
-                        cooldown = 5f;
+                            cooldown -= Time.deltaTime;
+
+                            if (cooldown <= 0)
+                            {
+                                
+                                Vector2 point = player.transform.position;
+                                Vector2 position = new Vector2(transform.position.x, transform.position.y);
+                                Vector2 direction = point - position;
+                                direction.Normalize();
+                                GameObject projectile = Instantiate(bullet, position, Quaternion.identity);
+                                projectile.GetComponent<Rigidbody2D>().velocity = direction * speed;
+                                projectile.transform.up = direction;
+                                cooldown = 2f;
+                                
+                            }
+
+                            break;
+
+                        case enemyType.Riot:
+
+                            cooldown -= Time.deltaTime;
+
+                            if (cooldown <= 0)
+                            {
+
+                                Vector2 point = player.transform.position;
+                                Vector2 position = new Vector2(transform.position.x, transform.position.y);
+                                Vector2 direction = point - position;
+                                direction.Normalize();
+                                GameObject projectile = (GameObject)Instantiate(bullet, position, Quaternion.identity);
+                                projectile.GetComponent<Rigidbody2D>().velocity = direction * speed;
+                                projectile.transform.up = direction;
+                                cooldown = 4f;
+
+                            }
+
+                            break;
+
+                        case enemyType.Juggernaut:
+
+                            script.enabled = true;
+
+                            break;
 
                     }
 

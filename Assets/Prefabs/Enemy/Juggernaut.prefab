@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 4735699448468372283}
   - component: {fileID: 4735699448468372280}
   - component: {fileID: 4735699448468372281}
+  - component: {fileID: 3467571623347197573}
   - component: {fileID: 4735699448468372286}
   - component: {fileID: 4735699448468372287}
   m_Layer: 0
@@ -128,11 +129,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currState: 0
-  health: 0
-  attackDistance: 7
-  chaseDistance: 20
-  desireDistance: 10
-  escapeDistance: 10
+  currType: 2
+  health: 10
+  attackDistance: 5
+  chaseDistance: 10
+  desireDistance: 1
+  escapeDistance: 5
   moveForce: 5
   speed: 5
   cooldown: 0
@@ -153,6 +155,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae7f612379b512c4fa8d68165b6b6f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3467571623347197573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4735699448468372284}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d4b11f245741d14582916ed8220907f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplier: 100
+  force: {x: 0, y: 0}
+  player: {fileID: 8439534059074421820, guid: 7caaddd191263a447b364cb9b83f3dac, type: 3}
 --- !u!50 &4735699448468372286
 Rigidbody2D:
   serializedVersion: 4
