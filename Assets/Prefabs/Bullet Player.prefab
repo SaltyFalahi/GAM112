@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3445384026072845787}
   - component: {fileID: 9173058737519328482}
   m_Layer: 0
-  m_Name: Bullet 1 1
+  m_Name: Bullet Player
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,4 +132,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 10
-  player: {fileID: 8439534059074421820, guid: 7caaddd191263a447b364cb9b83f3dac, type: 3}
+  shooter: {fileID: 8439534059074421820, guid: 7caaddd191263a447b364cb9b83f3dac, type: 3}

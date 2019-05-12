@@ -22,10 +22,15 @@ public class AIBasic : MonoBehaviour
     public float desireDistance;
     public float escapeDistance;
     public float moveForce;
+    public float speed;
+    public float cooldown;
 
     public GameObject player;
+    public GameObject bullet;
 
     public Transform[] patrolPoints;
+
+    private bool shot;
 
     private Rigidbody2D enemyRigidB;
 
@@ -38,6 +43,7 @@ public class AIBasic : MonoBehaviour
 
         enemyRigidB = GetComponent<Rigidbody2D>();
         distanceCheck = GameObject.FindObjectOfType<DistanceChecker>();
+        cooldown = 5f;
         currentTarget = patrolPoints[0];
         SetState(enemyStates.Patrol);
 
@@ -106,16 +112,21 @@ public class AIBasic : MonoBehaviour
             case enemyStates.Attack:
                 {
 
-                    
+                    cooldown -= Time.deltaTime;
 
-                }
+                    if (cooldown <= 0)
+                    {
 
-                break;
+                        Vector2 point = Camera.main.ScreenToWorldPoint(player.transform.position);
+                        Vector2 position = new Vector2(transform.position.x, transform.position.y);
+                        Vector2 direction = point - position;
+                        direction.Normalize();
+                        GameObject projectile = (GameObject)Instantiate(bullet, position, Quaternion.identity);
+                        projectile.GetComponent<Rigidbody2D>().velocity = direction * speed;
+                        projectile.transform.up = direction;
+                        cooldown = 5f;
 
-            default:
-                {
-
-                    
+                    }
 
                 }
 
@@ -169,7 +180,7 @@ public class AIBasic : MonoBehaviour
         {
 
             Vector2 dir = currentTarget.position - transform.position;
-            enemyRigidB.AddForce(dir.normalized * moveForce, ForceMode2D.Impulse);
+            enemyRigidB.AddForce(dir.normalized * moveForce, ForceMode2D.Force);
 
         }
 

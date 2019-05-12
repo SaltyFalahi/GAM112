@@ -11,24 +11,28 @@ public class BulletDestroy : MonoBehaviour
     {
     }
 
-
     void Update()
     {
+
         if (Vector3.Distance(transform.position, shooter.transform.position) >= offset)
         {
+
             Destroy(gameObject);
+
         }
+
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-          
-         
-        if (collision.gameObject.tag == "Enemy")
+             
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Player")
         {
             
-            Destroy(collision.gameObject);
             Destroy(gameObject); 
+
         }
+
     }
+
 }

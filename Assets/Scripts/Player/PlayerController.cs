@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
 
     bool isJumping = false;
 
-	// Use this for initialization
 	void Start ()
     {
 
@@ -27,7 +26,6 @@ public class PlayerController : MonoBehaviour
 
 	}
 	
-	// Update is called once per frame
 	void Update ()
     {
 
