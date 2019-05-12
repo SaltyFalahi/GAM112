@@ -112,9 +112,6 @@
     <Reference Include="com.unity.multiplayer-hlapi.Editor">
       <HintPath>I:/Unity/GAM112/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>I:/Unity/GAM112/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>I:/Unity/GAM112/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
@@ -135,9 +132,6 @@
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>I:/Unity/GAM112/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>I:/Unity/GAM112/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>I:/Unity/GAM112/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>

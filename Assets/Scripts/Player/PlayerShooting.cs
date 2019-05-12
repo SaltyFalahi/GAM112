@@ -13,6 +13,7 @@ public class PlayerShooting : MonoBehaviour
     public float pistolSpeed;
     public float machineGunSpeed;
     public float shotgunSpeed;
+    public float cooldown;
 
     private Rigidbody2D rb2d;
 
@@ -20,6 +21,7 @@ public class PlayerShooting : MonoBehaviour
     {
 
         rb2d = GetComponent<Rigidbody2D>();
+        cooldown = 0;
 
     }
     
@@ -28,26 +30,37 @@ public class PlayerShooting : MonoBehaviour
 
         ChangeWeapons();
 
-        if (Input.GetMouseButtonDown(0) && pistol.activeSelf == true)
+        cooldown -= Time.deltaTime;
+        Debug.Log(cooldown);
+        if(cooldown <= 0)
         {
 
-            Shoot(pistol, pistolSpeed);
+            if (Input.GetMouseButtonDown(0) && pistol.activeSelf == true)
+            {
+
+                Shoot(pistol, pistolSpeed);
+                cooldown = 3;
+
+            }
+
+            if (Input.GetMouseButtonDown(0) && machineGun.activeSelf == true)
+            {
+
+                Shoot(machineGun, machineGunSpeed);
+                cooldown = 1;
+
+            }
+
+            if (Input.GetMouseButtonDown(0) && shotgun.activeSelf == true)
+            {
+
+                Shoot(shotgun, shotgunSpeed);
+                cooldown = 5;
+
+            }
 
         }
 
-        if (Input.GetMouseButtonDown(0) && machineGun.activeSelf == true)
-        {
-
-            Shoot(machineGun, machineGunSpeed);
-
-        }
-
-        if (Input.GetMouseButtonDown(0) && shotgun.activeSelf == true)
-        {
-
-            Shoot(shotgun, shotgunSpeed);
-
-        }
     }
 
     void ChangeWeapons()
@@ -55,6 +68,8 @@ public class PlayerShooting : MonoBehaviour
         if (Input.GetKey(KeyCode.Keypad1))
         {
             pistol.SetActive(true);
+
+            cooldown = 0;
 
             if (pistol.activeSelf == true)
             {
@@ -67,6 +82,8 @@ public class PlayerShooting : MonoBehaviour
         {
             machineGun.SetActive(true);
 
+            cooldown = 0;
+
             if (machineGun.activeSelf == true)
             {
                 pistol.SetActive(false);
@@ -77,6 +94,8 @@ public class PlayerShooting : MonoBehaviour
         if (Input.GetKey(KeyCode.Keypad3))
         {
             shotgun.SetActive(true);
+
+            cooldown = 0;
 
             if (shotgun.activeSelf == true)
             {

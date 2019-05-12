@@ -128,13 +128,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currState: 0
+  health: 0
   attackDistance: 7
   chaseDistance: 20
   desireDistance: 10
   escapeDistance: 10
   moveForce: 5
   speed: 5
-  player: {fileID: 0}
+  cooldown: 0
+  player: {fileID: 8439534059074421820, guid: 7caaddd191263a447b364cb9b83f3dac, type: 3}
   bullet: {fileID: 1010866190977338684, guid: 02bc4a069ee1e5a4896bab3c4acf9cca, type: 3}
   patrolPoints:
   - {fileID: 0}
