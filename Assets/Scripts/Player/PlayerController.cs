@@ -19,14 +19,18 @@ public class PlayerController : MonoBehaviour
 
     private bool isJumping = false;
 
-	void Start ()
+    private Vector3 rollDirection;
+
+    private Vector2 mousePos;
+
+    void Start()
     {
 
         rb2d = GetComponent<Rigidbody2D>();
 
-	}
-	
-	void Update ()
+    }
+
+    void Update()
     {
 
         float horizontal = Input.GetAxis("Horizontal");
@@ -37,7 +41,7 @@ public class PlayerController : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 180, 0);
 
         }
-        else if(horizontal < 0)
+        else if (horizontal < 0)
         {
 
             transform.eulerAngles = new Vector3(0, 0, 0);
@@ -79,7 +83,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if(isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
 
             isJumping = true;
@@ -87,11 +91,11 @@ public class PlayerController : MonoBehaviour
             rb2d.velocity = new Vector2(rb2d.velocity.x, JumpSpeed);
 
         }
-        
-        if(Input.GetKey(KeyCode.Space) && isJumping)
+
+        if (Input.GetKey(KeyCode.Space) && isJumping)
         {
 
-            if(jumpTimeCounter > 0)
+            if (jumpTimeCounter > 0)
             {
 
                 rb2d.velocity = new Vector2(rb2d.velocity.x, JumpSpeed);
@@ -121,8 +125,30 @@ public class PlayerController : MonoBehaviour
 
         }
 
+        DodgeRoll();
+        Slide();
+
     }
 
+    private void DodgeRoll()
+    {
+        rollDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            MaxSpeed = 50f;
+            transform.position += rollDirection * MaxSpeed * Time.deltaTime;
+        }
+    }
+
+    private void Slide()
+    {
+        rollDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            MaxSpeed = 50f;
+            transform.position += rollDirection * MaxSpeed * Time.deltaTime;
+        }
+    }
     void OnCollisionEnter2D(Collision2D collision)
     {
 
