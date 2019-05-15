@@ -21,16 +21,16 @@ public class EnemyDestroy : MonoBehaviour
         
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         
-        if (collision.gameObject.tag.Equals ("Bullet") && !player.GetComponent<Drugs>().drugged)
+        if (collision.gameObject.tag.Equals ("BulletP") && !player.GetComponent<Drugs>().drugged)
         {
 
             enemy.GetComponent<AIBasic>().health -= 1;
 
         }
-        else if(collision.gameObject.tag.Equals("Bullet") && player.GetComponent<Drugs>().drugged)
+        else if(collision.gameObject.tag.Equals("BulletP") && player.GetComponent<Drugs>().drugged)
         {
 
             enemy.GetComponent<AIBasic>().health -= 10;

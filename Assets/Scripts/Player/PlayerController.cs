@@ -10,25 +10,22 @@ public class PlayerController : MonoBehaviour
     public float JumpSpeed = 3;
     public float JumpTime;
     public float Health = 1;
-    private Vector3 rollDirection;
-    private Vector2 mousePos;   
 
     public bool isGrounded;
 
-    Rigidbody2D rb2d;
+    private Rigidbody2D rb2d;
 
-    float jumpTimeCounter;
+    private float jumpTimeCounter;
 
-    bool isJumping = false;
+    private bool isJumping = false;
 
-	// Use this for initialization
 	void Start ()
     {
 
         rb2d = GetComponent<Rigidbody2D>();
+
 	}
 	
-	// Update is called once per frame
 	void Update ()
     {
 
@@ -81,7 +78,7 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-        
+
         if(isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
 
@@ -109,35 +106,56 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-        DodgeRoll();
-        Slide();
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
 
             isJumping = false;
 
-        }   
-    }
-
-    private void DodgeRoll()
-    {
-        rollDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            MaxSpeed = 50f;
-            transform.position += rollDirection * MaxSpeed * Time.deltaTime;
         }
-    }
 
-    private void Slide()
-    {
-        rollDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Health == 0)
         {
-            MaxSpeed = 50f;
-            transform.position += rollDirection * MaxSpeed * Time.deltaTime;
+
+            //Gameover screen
+
         }
+
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.tag == "Ground")
+        {
+
+            isGrounded = true;
+
+        }
+
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.tag == "Ground")
+        {
+
+            isGrounded = false;
+
+        }
+
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.tag.Equals("BulletE"))
+        {
+
+            Health -= 1;
+
+        }
+
+    }
 }
