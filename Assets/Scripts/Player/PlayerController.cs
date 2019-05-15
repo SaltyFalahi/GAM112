@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
         rollDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
         if (Input.GetKeyDown(KeyCode.C))
         {
-            MaxSpeed = 50f;
+            MaxSpeed = 20f;
             transform.position += rollDirection * MaxSpeed * Time.deltaTime;
         }
     }
@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour
         rollDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
         if (Input.GetKeyDown(KeyCode.X))
         {
-            MaxSpeed = 50f;
+            MaxSpeed = 6f;
             transform.position += rollDirection * MaxSpeed * Time.deltaTime;
         }
     }

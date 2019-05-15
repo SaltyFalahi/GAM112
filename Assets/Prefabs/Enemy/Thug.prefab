@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4375710536247149167}
   m_Layer: 0
   m_Name: Thug
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,7 +170,6 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
-  script: {fileID: 0}
 --- !u!114 &4375710536247149167
 MonoBehaviour:
   m_ObjectHideFlags: 0

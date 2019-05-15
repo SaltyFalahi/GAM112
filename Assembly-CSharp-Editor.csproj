@@ -142,6 +142,12 @@
     <Reference Include="com.unity.multiplayer-hlapi.Runtime">
       <HintPath>D:/Game Dev/GAM112 Production Final/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>D:/Game Dev/GAM112 Production Final/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>D:/Game Dev/GAM112 Production Final/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
     </Reference>
